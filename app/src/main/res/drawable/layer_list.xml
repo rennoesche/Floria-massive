@@ -1,0 +1,7 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:drawable="@drawable/lg_floria"
+        android:width="158dp"
+    android:height="158dp"
+    />
+</layer-list>

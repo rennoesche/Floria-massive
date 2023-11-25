@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menu_p">Profil</string>
+    <string name="menu_r">Reminder</string>
+    <string name="menu_k">Konsultasi</string>
+    <string name="menu_t">Tips</string>
+    <string name="menu_b">Beranda</string>
+    <string name="slide_1_title">Panduan Merawat Tanaman</string>
+    <string name="slide_1_desc">Temukan ragam video inspiratif mengenai perawatan tanaman hias yang akan membuat tumbuhan Anda bersinar.</string>
+</resources>

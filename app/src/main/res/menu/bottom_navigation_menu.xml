@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/beranda"
+        android:icon="@drawable/def_logo_inactive"
+        android:title="@string/menu_b" />
+    <item
+        android:id="@+id/tips"
+        android:icon="@drawable/def_tips_inactive"
+        android:title="@string/menu_t" />
+    <item
+        android:id="@+id/konsultasi"
+        android:icon="@drawable/def_tips_inactive"
+        android:title="@string/menu_k" />
+    <item
+        android:id="@+id/pengingat"
+        android:icon="@drawable/def_reminder_inactive"
+        android:title="@string/menu_r" />
+
+    <item
+        android:id="@+id/profil"
+        android:icon="@drawable/def_profil_inactive"
+        android:title="@string/menu_p" />
+</menu>

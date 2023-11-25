@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Contoh style untuk Button -->
+    <style name="mainButton" parent="Widget.MaterialComponents.Button">
+        <item name="android:backgroundTint">@color/green_600</item>
+        <item name="android:textColor">@color/green_50</item>
+    </style>
+
+</resources>

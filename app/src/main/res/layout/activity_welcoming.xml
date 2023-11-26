@@ -7,7 +7,34 @@
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:id="@+id/indicatorLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@id/btnStart"
+        android:layout_marginBottom="32dp"
+        android:orientation="horizontal">
+
+        <!-- Indikator lingkaran -->
+        <View
+            android:id="@+id/circle1"
+            style="@style/CircleIndicator"/>
+
+        <View
+            android:id="@+id/circle2"
+            style="@style/CircleIndicator"/>
+
+        <View
+            android:id="@+id/circle3"
+            style="@style/CircleIndicator"/>
+
+        <View
+            android:id="@+id/circle4"
+            style="@style/CircleIndicator"/>
+
+    </LinearLayout>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnStart"
@@ -17,7 +44,7 @@
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="32dp"
         app:cornerRadius="16dp"
-        android:text="Mulai"
+        android:text="@string/Start"
         android:textSize="14sp"
         android:textColor="@color/green_50"
         android:layout_alignParentBottom="true"

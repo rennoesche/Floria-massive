@@ -17,8 +17,7 @@
             android:exported="false" />
         <activity
             android:name=".ui.MainActivity"
-            android:exported="false"
-            android:theme="@style/Theme.Floria" />
+            android:exported="false" />
         <activity
             android:name=".ui.Splash"
             android:exported="true">

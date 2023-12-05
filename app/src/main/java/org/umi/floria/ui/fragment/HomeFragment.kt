@@ -11,7 +11,6 @@ import com.google.android.material.carousel.CarouselLayoutManager
 import org.umi.floria.R
 import org.umi.floria.ui.adapter.HomeSliderAdapter
 import org.umi.floria.ui.adapter.RecyclerCardAdapter
-import org.umi.floria.ui.adapter.TopCarouselAdapter
 
 class HomeFragment : Fragment() {
 
@@ -19,9 +18,10 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
+        // Inflate layout untuk fragment home
         val view = inflater.inflate(R.layout.fragment_home, container, false)
 
+        // mendefinisikan variabel carouser dan card
         val carouselRecyclerView: RecyclerView = view.findViewById(R.id.home_slider)
         val cardRecyclerView: RecyclerView = view.findViewById(R.id.view_card)
         cardRecyclerView.layoutManager = LinearLayoutManager(context)
@@ -35,6 +35,8 @@ class HomeFragment : Fragment() {
 
         return view
     }
+
+    // mengambil data card dengan cara list
     private fun getCard(): List<RecyclerCardAdapter.CardItem> {
         return listOf(
             RecyclerCardAdapter.CardItem(R.drawable.bg_card1),
@@ -42,6 +44,8 @@ class HomeFragment : Fragment() {
             RecyclerCardAdapter.CardItem(R.drawable.bg_card1)
         )
     }
+
+    // mengambil data slider dengan cara list
     private fun getData(): List<HomeSliderAdapter.SliderItem> {
         return listOf(
             HomeSliderAdapter.SliderItem(R.drawable.slider_1, "Bunga"),

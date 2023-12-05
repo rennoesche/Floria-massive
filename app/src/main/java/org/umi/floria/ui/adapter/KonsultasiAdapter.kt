@@ -18,9 +18,10 @@ class KonsultasiAdapter(private val dataSet: List<Any>) :
     }
 
     override fun onBindViewHolder(holder: KonsultasiViewHolder, position: Int) {
-        // Bind data to the item view (if needed)
+        // disini mengisi data sesuai kebutuhan
     }
 
+    // mengambil size dataset
     override fun getItemCount(): Int {
         return dataSet.size
     }

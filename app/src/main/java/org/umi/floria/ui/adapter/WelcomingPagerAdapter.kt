@@ -8,10 +8,11 @@ import org.umi.floria.ui.fragment.*
 
 class WelcomingPagerAdapter(fragmentActivity: FragmentActivity) : FragmentStateAdapter(fragmentActivity) {
 
+    // mendefinisikan banyak item fragmen agar bisa di loop
     override fun getItemCount(): Int {
         return 4
     }
-
+    // membuat fragmen adapter, jika posisi item sama dengan 0, maka akan menampilkan fragmen slide1, dst
     override fun createFragment(position: Int): Fragment {
         return when (position) {
             0 -> Slide1Fragment()

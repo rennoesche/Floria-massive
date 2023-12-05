@@ -14,14 +14,18 @@ import org.umi.floria.ui.adapter.WelcomingPagerAdapter
 
 class WelcomingActivity : AppCompatActivity() {
 
+    // definisikan variabel
+
     private lateinit var viewPager: ViewPager2
     private lateinit var indicatorLayout: LinearLayout
     private lateinit var sharedPreferences: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        // mengambil variabel yang telah didefinisikan
         sharedPreferences = getPreferences(Context.MODE_PRIVATE)
 
+        // membuat props untuk shared preferences, jika ada key "fresh instal=true" maka onboarding screen akan di skip
         if (sharedPreferences.getBoolean("FreshInstall", true)) {
             setContentView(R.layout.activity_welcoming)
             val btnStart: Button = findViewById(R.id.btnStart)
@@ -38,22 +42,23 @@ class WelcomingActivity : AppCompatActivity() {
                 }
             })
 
+
+            // membuat prop shared preferences "fresh install=false" jika btnstart diklik
             btnStart.setOnClickListener {
                 setFreshInstall(false)
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
                 finish()
             }
+            // jika prop shared preferences "fresh install=false" maka akan menjalankan kodingan ini
         } else {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             finish()
         }
     }
-    //    private fun isFreshInstall(): Boolean {
-//        return sharedPreferences.getBoolean("FreshInstall", true)
-//    }
 
+    // ini mengupdate posisi paging indicator (lingkarannya)
     private fun updateIndicator(position: Int) {
         for (i in 0 until indicatorLayout.childCount) {
             val circle = indicatorLayout.getChildAt(i) as View
@@ -61,6 +66,7 @@ class WelcomingActivity : AppCompatActivity() {
         }
     }
 
+    // set prop shared preferences "fresh install=false" untuk awal agar tidak eror
     private fun setFreshInstall(value: Boolean) {
         val editor = sharedPreferences.edit()
         editor.putBoolean("FreshInstall", value)

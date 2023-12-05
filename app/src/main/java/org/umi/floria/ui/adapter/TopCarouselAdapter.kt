@@ -11,6 +11,7 @@ import org.umi.floria.R
 class TopCarouselAdapter(private val items: List<CarouselItem>) :
     RecyclerView.Adapter<TopCarouselAdapter.TopCarouselViewHolder>() {
 
+    // membuat dataclass isi dari slider berupa bg_res_id dan title
     data class CarouselItem(val backgroundImageResId: Int, val title: String)
 
     inner class TopCarouselViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -27,6 +28,7 @@ class TopCarouselAdapter(private val items: List<CarouselItem>) :
         return TopCarouselViewHolder(view)
     }
 
+    // mengisi data didalam view berupa gambar dan judul
     override fun onBindViewHolder(holder: TopCarouselViewHolder, position: Int) {
         val item = items[position]
         holder.backgroundImageView.setImageResource(item.backgroundImageResId)

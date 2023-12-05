@@ -22,11 +22,13 @@ class TipsFragment : Fragment() {
         val carouselRecyclerView: RecyclerView = view.findViewById(R.id.carousel_recycler_view)
         carouselRecyclerView.layoutManager = CarouselLayoutManager()
 
-        val adapter = TopCarouselAdapter(getDummyData()) // Ganti dengan data sebenarnya
+        val adapter = TopCarouselAdapter(getDummyData()) // mengambil data dummy dibawah agar ditampilkan dalam fragment
         carouselRecyclerView.adapter = adapter
 
         return view
     }
+
+    // mengambil data dummy didalam list
     private fun getDummyData(): List<TopCarouselAdapter.CarouselItem> {
         return listOf(
             TopCarouselAdapter.CarouselItem(R.drawable.howto_a, "Cara merawat tanaman hias lidah mertua"),

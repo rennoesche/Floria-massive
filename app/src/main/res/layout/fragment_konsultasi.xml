@@ -1,38 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragment.KonsultasiFragment">
-
-    <androidx.constraintlayout.widget.ConstraintLayout
+    tools:context=".ui.fragment.KonsultasiFragment"
+    android:background="@color/green_500">
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
         android:padding="16dp">
         <TextView
-            android:id="@+id/judul3"
+            android:layout_marginTop="32dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Konsultasi"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/tv3"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
+            android:textSize="24sp"
             android:textStyle="bold"
-            android:textColor="@color/green_950"
-            android:textSize="20sp"
-            android:layout_marginBottom="16dp"/>
-
+            android:textColor="@color/green_50"/>
         <TextView
-            android:id="@+id/tv3"
+            android:layout_marginTop="16dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="@string/des_konsultasi"
+            android:textColor="@color/green_50"
+            android:textSize="12sp"/>
+        <Button
             android:layout_marginTop="16dp"
-            android:text="@string/lorem_ipsum"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/judul3" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.core.widget.NestedScrollView>
+            android:textColor="@color/green_50"
+            app:strokeColor="@color/green_50"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:id="@+id/bottomBarButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mulai Sekarang"
+            android:layout_gravity="end|bottom"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@id/standard_bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        style="@style/Widget.Material3.BottomSheet"
+        app:behavior_hideable="false"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+        <RelativeLayout
+            android:layout_marginTop="32dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViews"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

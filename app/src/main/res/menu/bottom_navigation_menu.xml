@@ -13,7 +13,7 @@
     <item
         android:id="@+id/konsultasi"
         android:enabled="true"
-        android:icon="@drawable/def_tips_inactive"
+        android:icon="@drawable/def_konsul"
         android:title="@string/menu_k" />
     <item
         android:id="@+id/pengingat"

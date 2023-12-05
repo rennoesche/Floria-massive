@@ -1,6 +1,7 @@
 package org.umi.floria.ui
 
 import android.os.Bundle
+import android.view.Menu
 import androidx.fragment.app.Fragment
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -19,12 +20,16 @@ class MainActivity : AppCompatActivity() {
         val bottomNav: BottomNavigationView = findViewById(R.id.bottomNav)
 
         bottomNav.setOnItemSelectedListener { item ->
+            resetAllIcons(bottomNav.menu)
             when (item.itemId) {
                 R.id.beranda -> {
+
+                    item.setIcon(R.drawable.lg_floria)
                     replaceFragment(HomeFragment())
                     true
                 }
                 R.id.tips -> {
+                    item.setIcon(R.drawable.def_tips)
                     replaceFragment(TipsFragment())
                     true
                }
@@ -33,10 +38,12 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
                 R.id.pengingat -> {
+                    item.setIcon(R.drawable.def_reminder)
                     replaceFragment(PengingatFragment())
                     true
                 }
                 R.id.profil -> {
+                    item.setIcon(R.drawable.def_profil)
                     replaceFragment(ProfilFragment())
                     true
                 }
@@ -50,5 +57,17 @@ class MainActivity : AppCompatActivity() {
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragmentContainer, fragment)
             .commit()
+    }
+
+    private fun resetAllIcons(menu: Menu) {
+        for (i in 0 until menu.size()) {
+            val menuItem = menu.getItem(i)
+            when (menuItem.itemId) {
+                R.id.beranda -> menuItem.setIcon(R.drawable.def_logo_inactive)
+                R.id.tips -> menuItem.setIcon(R.drawable.def_tips_inactive)
+                R.id.pengingat -> menuItem.setIcon(R.drawable.def_reminder_inactive)
+                R.id.profil -> menuItem.setIcon(R.drawable.def_profil_inactive)
+            }
+        }
     }
 }

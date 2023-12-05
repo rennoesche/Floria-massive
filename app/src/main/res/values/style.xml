@@ -5,11 +5,30 @@
         <item name="android:backgroundTint">@color/green_600</item>
         <item name="android:textColor">@color/green_50</item>
     </style>
+    <style name="navbar_selected">
+        <item name="android:tint">@color/green_500</item>
+        <item name="itemTextColor">@color/green_500</item>
+    </style>
     <style name="CircleIndicator">
         <item name="android:layout_width">12dp</item>
         <item name="android:layout_height">12dp</item>
         <item name="android:layout_margin">8dp</item>
         <item name="android:background">@drawable/circle_bg</item>
+    </style>
+    <style name="Welcome">
+        <item name="android:textColor">@color/green_950</item>
+        <item name="android:textSize">48sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="TeksAgakBesar">
+        <item name="android:textColor">@color/green_950</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+    <style name="TeksNormal">
+        <item name="android:textColor">@color/green_950</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">normal</item>
     </style>
 
 </resources>

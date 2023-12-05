@@ -8,4 +8,12 @@
     <string name="slide_1_title">Panduan Merawat Tanaman</string>
     <string name="slide_1_desc">Temukan ragam video inspiratif mengenai perawatan tanaman hias yang akan membuat tumbuhan Anda bersinar.</string>
     <string name="Start">Mulai</string>
+    <string name="cari_artikel">Cari artikel</string>
+    <string name="help_support"><![CDATA[Bantuan & Layanan]]></string>
+    <string name="contact_us">Hubungi Kami</string>
+    <string name="privacy_policy">Kebijakan Privasi</string>
+    <string name="edit_informasi_profil">Edit Informasi Profil</string>
+    <string name="notification">Notifikasi</string>
+    <string name="keluar">Keluar</string>
+    <string name="des_konsultasi">Temukan solusi terkait permasalahan anda dalam merawat tanaman hias dengan para ahli. Anda juga bisa bertanya tentang apapun seputar tanaman hias.</string>
 </resources>

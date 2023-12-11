@@ -20,6 +20,17 @@
         android:layout_height="196dp"
         android:clipChildren="false"
         android:clipToPadding="false" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/tips_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="bottom"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        app:layout_anchor="@id/carousel_recycler_view"
+        app:layout_anchorGravity="bottom"
+        app:spanCount="2" />
+
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/search_bar_layout"

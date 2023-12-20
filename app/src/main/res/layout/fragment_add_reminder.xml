@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:background="@color/green_600"
+            style="@style/Widget.MaterialComponents.Toolbar.Primary"
+            app:titleTextColor="@color/green_50"
+            app:navigationIconTint="@color/green_50"
+            android:id="@+id/topAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="?attr/actionBarSize"
+            app:title="Atur Pengingat Anda"
+            app:menu="@menu/top_app_menu_more"
+            app:navigationIcon="@drawable/ic_back" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:layout_marginTop="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <com.google.android.material.textfield.TextInputLayout
+            app:boxBackgroundColor="@color/green_50"
+            style="?attr/textInputFilledStyle"
+            android:id="@+id/judulpengingat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/green_950"
+            app:boxStrokeColor="@color/green_600"
+            app:hintTextColor="@color/green_950"
+            app:startIconDrawable="@drawable/ic_judulpengingat"
+            android:hint="Mau pengingat apa kawan?">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:inputType="text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/waktu_aktivitas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableEnd="@drawable/ic_arrow_right"
+                android:drawablePadding="14dp"
+                android:gravity="center_vertical"
+                android:padding="16dp"
+                android:text="Waktu aktivitas"
+                android:textColor="@color/green_950"
+                android:textSize="16sp"
+                app:drawableStartCompat="@drawable/ic_act_time"
+                app:drawableTint="@color/green_950"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/st_waktu_aktivitas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="46dp"
+                android:textColor="@color/green_950"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/required_bahan"
+                android:padding="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Bahan yang dibutuhkan"
+                android:textColor="@color/green_950"
+                android:textSize="16sp"
+                android:gravity="center_vertical"
+                app:drawableStartCompat="@drawable/ic_bahan"
+                android:drawablePadding="14dp"
+                android:drawableEnd="@drawable/ic_arrow_right"
+                app:drawableTint="@color/green_950"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+            <TextView
+                android:id="@+id/st_bahan_dibutuhkan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="46dp"
+                android:textColor="@color/green_950"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp">
+            <TextView
+                android:id="@+id/ingatkan_sebelum"
+                android:padding="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ingatkan sebelum"
+                android:textColor="@color/green_950"
+                android:textSize="16sp"
+                android:gravity="center_vertical"
+                app:drawableStartCompat="@drawable/ic_ingatkan"
+                android:drawablePadding="14dp"
+                android:drawableEnd="@drawable/ic_arrow_right"
+                app:drawableTint="@color/green_950"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/st_ingatkan_sebelum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="46dp"
+                android:textColor="@color/green_950"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp">
+
+            <TextView
+                android:id="@+id/tanggal_aktivitas"
+                android:padding="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tanggal aktivitas"
+                android:textColor="@color/green_950"
+                android:textSize="16sp"
+                android:gravity="center_vertical"
+                app:drawableStartCompat="@drawable/ic_calendar"
+                android:drawablePadding="14dp"
+                android:drawableEnd="@drawable/ic_arrow_right"
+                app:drawableTint="@color/green_950"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/st_tanggal_aktivitas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="46dp"
+                android:textColor="@color/green_950"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:paddingVertical="16dp"
+            android:paddingHorizontal="12dp"
+            app:boxStrokeColor="@color/green_600"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/deskripsi_pengingat"
+            android:textColorHint="@color/green_950"
+            app:hintTextColor="@color/green_950"
+            android:hint="Deskripsi"
+            app:cursorColor="@color/green_600">
+            <com.google.android.material.textfield.TextInputEditText
+                android:inputType="textMultiLine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+        <Button
+            android:layout_margin="16dp"
+            android:id="@+id/simpan_pengingat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/simpan"
+            android:textAllCaps="true"
+            style="@style/Widget.Material3.Button"
+            android:backgroundTint="@color/green_600"/>
+    </LinearLayout>
+</LinearLayout>

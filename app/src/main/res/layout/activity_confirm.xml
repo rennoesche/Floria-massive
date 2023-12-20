@@ -4,6 +4,52 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ConfirmActivity">
+    tools:context=".ui.ConfirmActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:src="@drawable/bg_confirmact"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/imageView">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mulai menggunakan aplikasi kami"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp"
+            android:textColor="@color/green_950"/>
+
+        <Button
+            android:id="@+id/confirm_signin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/green_600"
+            android:minWidth="300dp"
+            android:text="Sign In"
+            android:textColor="@color/green_50" />
+        <Button
+            android:id="@+id/confirm_signup"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            app:strokeColor="@color/green_600"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/green_50"
+            android:minWidth="300dp"
+            android:text="Create an account"
+            android:textColor="@color/green_600" />
+
+    </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

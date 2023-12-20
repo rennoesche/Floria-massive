@@ -13,4 +13,5 @@
     <color name="green_950">#ff0e201a</color>
     <color name="silver_F8">#fff8f8f8</color>
     <color name="status_bar">#F3EDF7</color>
+    <color name="half_trans">#80000000</color>
 </resources>

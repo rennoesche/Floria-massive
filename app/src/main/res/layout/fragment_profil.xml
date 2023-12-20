@@ -64,7 +64,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/help_support"
                 android:textSize="16sp"
@@ -84,7 +84,7 @@
                 app:dividerInsetEnd="8dp"/>
             <TextView
                 android:layout_marginTop="8dp"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/contact_us"
                 android:textSize="16sp"
@@ -104,7 +104,7 @@
                 app:dividerInsetEnd="8dp"/>
             <TextView
                 android:layout_marginTop="8dp"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/privacy_policy"
                 android:textSize="16sp"
@@ -124,7 +124,7 @@
                 app:dividerInsetEnd="8dp"/>
             <TextView
                 android:layout_marginTop="8dp"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/edit_informasi_profil"
                 android:textSize="16sp"
@@ -144,7 +144,7 @@
                 app:dividerInsetEnd="8dp"/>
             <TextView
                 android:layout_marginTop="8dp"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/notification"
                 android:textSize="16sp"
@@ -163,8 +163,9 @@
                 app:dividerInsetStart="8dp"
                 app:dividerInsetEnd="8dp"/>
             <TextView
+                android:id="@+id/logout_cok"
                 android:layout_marginTop="8dp"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/keluar"
                 android:textSize="16sp"

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_close"
+        android:background="@android:color/transparent"
+        android:id="@+id/close"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:contentDescription="close" />
+
+    <ImageView
+        android:id="@+id/img_hore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/hore"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/close"
+        android:layout_marginTop="16dp" />
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/img_hore"
+        android:text="Selamat!"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="@color/green_950"
+        android:layout_marginTop="16dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/text"
+        android:text="Akun anda telah terdaftar"
+        android:textColor="@color/green_950"
+        android:textSize="14sp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="48dp"/>
+
+</RelativeLayout>

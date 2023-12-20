@@ -1,18 +1,22 @@
 package org.umi.floria.vm
 
+import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.room.Room
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import org.umi.floria.models.LoginCallback
 import org.umi.floria.models.PreferencesManager
-import org.umi.floria.room.*
-import org.umi.floria.ui.fragment.LoginFragment
+import org.umi.floria.room.AppDatabase
+import org.umi.floria.room.User
+import org.umi.floria.room.UserDao
 
-class AuthViewModel(application: LoginFragment) : AndroidViewModel(application) {
+class LoginViewModel(application: Application) : AndroidViewModel(application) {
     private val userDao: UserDao
     private val preferencesManager: PreferencesManager
 
+    var loginCallback: LoginCallback? = null
     init {
         val db = Room.databaseBuilder(
             application,
@@ -24,8 +28,9 @@ class AuthViewModel(application: LoginFragment) : AndroidViewModel(application) 
         preferencesManager = PreferencesManager(application)
     }
 
-    fun registerUser(user: User) {
+    fun registerUser(name: String, email: String, password: String) {
         viewModelScope.launch(Dispatchers.IO) {
+            val user = User(name = name, email = email, password = password)
             userDao.insertUser(user)
         }
     }
@@ -34,10 +39,13 @@ class AuthViewModel(application: LoginFragment) : AndroidViewModel(application) 
         viewModelScope.launch(Dispatchers.IO) {
             val user = userDao.login(email, password)
             if (user != null) {
+                preferencesManager.setUserId(user.id)
                 preferencesManager.isLoggedIn = true
+                loginCallback?.onLoginSuccess()
             } else {
-                // Handle failed login
+                loginCallback?.onLoginFailed()
             }
         }
     }
 }
+

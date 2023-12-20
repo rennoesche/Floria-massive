@@ -1,21 +1,26 @@
 package org.umi.floria.ui.fragment
 
+import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.EditText
+import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.fragment.findNavController
+import com.google.android.material.textfield.TextInputLayout
 import org.umi.floria.R
-import org.umi.floria.vm.AuthViewModel
-import org.umi.floria.vm.AuthViewModelFactory
+import org.umi.floria.models.LoginCallback
+import org.umi.floria.ui.MainActivity
+import org.umi.floria.vm.LoginViewModel
 
-class LoginFragment : Fragment() {
+class LoginFragment : Fragment(), LoginCallback {
 
-    private lateinit var viewModel: AuthViewModel
+    private lateinit var viewModel: LoginViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,26 +32,35 @@ class LoginFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel = ViewModelProvider(this, AuthViewModelFactory(this))[AuthViewModel::class.java]
+        viewModel = ViewModelProvider(this)[LoginViewModel::class.java]
+        viewModel.loginCallback = this
 
-        val editTextEmail = view.findViewById<EditText>(R.id.editTextEmail)
-        val editTextPassword = view.findViewById<EditText>(R.id.editTextPassword)
-        val btnLogin = view.findViewById<Button>(R.id.btnLogin)
+        val editTextEmail = view.findViewById<TextInputLayout>(R.id.layout_it_email).editText
+        val editTextPassword = view.findViewById<TextInputLayout>(R.id.layout_it_password).editText
+        val btnLogin = view.findViewById<Button>(R.id.btnSignin)
+        val textRegist = view.findViewById<TextView>(R.id.text_login_signup)
 
         btnLogin.setOnClickListener {
-            val email = editTextEmail.text.toString().trim()
-            val password = editTextPassword.text.toString().trim()
+            val email = editTextEmail?.text.toString().trim()
+            val password = editTextPassword?.text.toString().trim()
 
             if (email.isNotEmpty() && password.isNotEmpty()) {
-                viewModel.login(email, password) { success ->
-                    if (success) {
-                        // Login berhasil, tambahkan logika navigasi ke fragment atau activity lain
-                        findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
-                    } else {
-                        // Login gagal, tampilkan pesan kesalahan
-                    }
-                }
+                viewModel.loginUser(email, password)
             }
         }
+        textRegist.setOnClickListener {
+            requireActivity().supportFragmentManager.beginTransaction().replace(android.R.id.content, RegisterFragment()).commit()
+        }
     }
+    override fun onLoginSuccess() {
+        val intent = Intent(requireContext(), MainActivity::class.java)
+        startActivity(intent)
+        requireActivity().finish()
+    }
+
+    override fun onLoginFailed() {
+        // Tampilkan pesan kesalahan login
+        Handler(Looper.getMainLooper()).post {
+            Toast.makeText(requireContext(), "Login failed. Invalid email or password.", Toast.LENGTH_SHORT).show()
+        }    }
 }

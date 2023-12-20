@@ -20,5 +20,6 @@
         android:layout_alignParentBottom="true"
         android:elevation="3dp"
         android:background="#F7F2FA"
+        app:itemIconTint="@color/green_600"
         app:menu="@menu/bottom_navigation_menu" />
 </RelativeLayout>

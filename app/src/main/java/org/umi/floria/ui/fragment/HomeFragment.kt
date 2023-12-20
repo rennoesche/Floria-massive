@@ -5,12 +5,21 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.carousel.CarouselLayoutManager
+import kotlinx.coroutines.Dispatchers
 import org.umi.floria.R
 import org.umi.floria.ui.adapter.HomeSliderAdapter
 import org.umi.floria.ui.adapter.RecyclerCardAdapter
+import org.umi.floria.room.AppDatabase
+import org.umi.floria.room.User
+import org.umi.floria.room.UserDao
+import org.umi.floria.models.PreferencesManager
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class HomeFragment : Fragment() {
 
@@ -34,6 +43,22 @@ class HomeFragment : Fragment() {
 
 
         return view
+    }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val textWelcomingUser = view.findViewById<TextView>(R.id.welcoming_user)
+
+        val preferencesManager = PreferencesManager(requireContext())
+        val userId = preferencesManager.getUserId()
+
+        lifecycleScope.launch(Dispatchers.IO) {
+            val userDao = AppDatabase.getInstance(requireContext()).userDao()
+            val userName = userDao.getUserById(userId)
+
+            withContext(Dispatchers.Main) {
+                textWelcomingUser.text = "$userName!"
+            }
+        }
     }
 
     // mengambil data card dengan cara list
